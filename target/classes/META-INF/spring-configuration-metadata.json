@@ -1,0 +1,99 @@
+{
+  "groups": [
+    {
+      "name": "app.oauth2",
+      "type": "com.hungrybandits.rest.auth.config.OAuth2SecurityProperties",
+      "sourceType": "com.hungrybandits.rest.auth.config.OAuth2SecurityProperties"
+    },
+    {
+      "name": "app.security.jwt.access",
+      "type": "com.hungrybandits.rest.auth.security.jwt.JWTServiceProperties",
+      "sourceType": "com.hungrybandits.rest.auth.config.JWTSecurityProperties",
+      "sourceMethod": "public com.hungrybandits.rest.auth.security.jwt.JWTServiceProperties getAccessTokenProps() "
+    },
+    {
+      "name": "app.security.jwt.refresh",
+      "type": "com.hungrybandits.rest.auth.security.jwt.JWTServiceProperties",
+      "sourceType": "com.hungrybandits.rest.auth.config.JWTSecurityProperties",
+      "sourceMethod": "public com.hungrybandits.rest.auth.security.jwt.JWTServiceProperties getRefreshTokenProps() "
+    }
+  ],
+  "properties": [
+    {
+      "name": "app.oauth2.authorized-redirect-uri",
+      "type": "java.util.List<java.lang.String>",
+      "sourceType": "com.hungrybandits.rest.auth.config.OAuth2SecurityProperties"
+    },
+    {
+      "name": "app.security.jwt.access.expiry-time-in-minutes",
+      "type": "java.lang.Long",
+      "sourceType": "com.hungrybandits.rest.auth.security.jwt.JWTServiceProperties"
+    },
+    {
+      "name": "app.security.jwt.access.issuer",
+      "type": "java.lang.String",
+      "sourceType": "com.hungrybandits.rest.auth.security.jwt.JWTServiceProperties"
+    },
+    {
+      "name": "app.security.jwt.access.private-key",
+      "type": "java.lang.String",
+      "sourceType": "com.hungrybandits.rest.auth.security.jwt.JWTServiceProperties"
+    },
+    {
+      "name": "app.security.jwt.access.public-key",
+      "type": "java.lang.String",
+      "sourceType": "com.hungrybandits.rest.auth.security.jwt.JWTServiceProperties"
+    },
+    {
+      "name": "app.security.jwt.access.secret-key",
+      "type": "java.lang.String",
+      "sourceType": "com.hungrybandits.rest.auth.security.jwt.JWTServiceProperties"
+    },
+    {
+      "name": "app.security.jwt.access.strategy",
+      "type": "com.hungrybandits.rest.auth.enums.Strategy",
+      "sourceType": "com.hungrybandits.rest.auth.security.jwt.JWTServiceProperties"
+    },
+    {
+      "name": "app.security.jwt.access.token-type",
+      "type": "java.lang.String",
+      "sourceType": "com.hungrybandits.rest.auth.security.jwt.JWTServiceProperties"
+    },
+    {
+      "name": "app.security.jwt.refresh.expiry-time-in-minutes",
+      "type": "java.lang.Long",
+      "sourceType": "com.hungrybandits.rest.auth.security.jwt.JWTServiceProperties"
+    },
+    {
+      "name": "app.security.jwt.refresh.issuer",
+      "type": "java.lang.String",
+      "sourceType": "com.hungrybandits.rest.auth.security.jwt.JWTServiceProperties"
+    },
+    {
+      "name": "app.security.jwt.refresh.private-key",
+      "type": "java.lang.String",
+      "sourceType": "com.hungrybandits.rest.auth.security.jwt.JWTServiceProperties"
+    },
+    {
+      "name": "app.security.jwt.refresh.public-key",
+      "type": "java.lang.String",
+      "sourceType": "com.hungrybandits.rest.auth.security.jwt.JWTServiceProperties"
+    },
+    {
+      "name": "app.security.jwt.refresh.secret-key",
+      "type": "java.lang.String",
+      "sourceType": "com.hungrybandits.rest.auth.security.jwt.JWTServiceProperties"
+    },
+    {
+      "name": "app.security.jwt.refresh.strategy",
+      "type": "com.hungrybandits.rest.auth.enums.Strategy",
+      "sourceType": "com.hungrybandits.rest.auth.security.jwt.JWTServiceProperties"
+    },
+    {
+      "name": "app.security.jwt.refresh.token-type",
+      "type": "java.lang.String",
+      "sourceType": "com.hungrybandits.rest.auth.security.jwt.JWTServiceProperties"
+    }
+  ],
+  "hints": []
+}

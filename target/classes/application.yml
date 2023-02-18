@@ -1,0 +1,78 @@
+server:
+    port: 8080
+spring:
+    application:
+        name: auth
+    profiles:
+        active: dev
+    security:
+        jwt:
+            access:
+                strategy: ASYMMETRIC_ENCRYPTION
+                issuer: demo.io
+                secretKey: ${NORMAL_SECRET_KEY}
+                publicKey: ${NORMAL_PUBLIC_KEY}
+                privateKey: ${NORMAL_PRIVATE_KEY}
+                tokenType: ACCESS_TOKEN
+                expiryTimeInMinutes: 30
+            refresh:
+                strategy: ASYMMETRIC_ENCRYPTION
+                issuer: demo.io
+                secretKey: ${REFRESH_SECRET_KEY}
+                publicKey: ${REFRESH_PUBLIC_KEY}
+                privateKey: ${REFRESH_PRIVATE_KEY}
+                tokenType: REFRESH_TOKEN
+                expiryTimeInMinutes: 1440
+        oauth2:
+            authorizedRedirectUri: ${AUTHORIZED_REDIRECT_URI:http://localhost:3000/oauth2/redirect}
+            client:
+                registration:
+                    github:
+                        redirect-uri: ${GIT_REDIRECT_URI}
+                        client-secret: ${GIT_CLIENT_SECRET}
+                        client-id: ${GIT_CLIENT_ID}
+                    google:
+                        scope: profile,email
+                        redirect-uri: ${GOOGLE_REDIRECT_URL}
+                        client-secret: ${GOOGLE_CLIENT_SECRET}
+                        client-id: ${GOOGLE_CLIENT_ID}
+    datasource:
+        password: dev
+        url: jdbc:h2:file:./db/${ACTIVE_PROFILE:dev}/${DEV_DBNAME:demodb}
+        username: dev
+        driverClassName: org.h2.Driver
+    h2:
+        console:
+            enabled: true
+            path: /h2
+            settings:
+                web-allow-others: true
+    jpa:
+        open-in-view: false
+        show-sql: true
+        database-platform: org.hibernate.dialect.H2Dialect
+        hibernate:
+            ddl-auto: update
+            use-new-id-generator-mappings: true
+        properties:
+            hibernate:
+                format_sql: true
+                order_inserts=true:
+                jdbc:
+                    batch_size=4:
+                dialect: org.hibernate.dialect.PostgreSQLDialect
+    zipkin:
+        base-url: http://localhost:9411
+    rabbitmq:
+        addresses: localhost:5672
+eureka:
+    client:
+        service-url:
+            defaultZone: http://localhost:8761/eureka
+        fetch-registry: true
+        register-with-eureka: true
+        enabled: true
+app:
+    uri:
+        prefix: /api/v1
+
